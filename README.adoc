@@ -12,6 +12,14 @@ If you need assistance with the training materials or want help incorporating th
 
 Information about the database will go here.
 
+== Queries
+
+|===
+| *File* | *Description*
+| link:src/threat-day-hour-protocol.sql[threat-day-hour-protocol.sql] | Select and count all threats, grouped by day, hour, protocol.
+|===
+
+
 == About Ridgeback Hunter
 
 Ridgeback Hunter is an interactive defense platform for network security and network management.
