@@ -10,9 +10,34 @@ If you need assistance with the training materials or want help incorporating th
 
 == Ridgeback Hunter Database
 
-Information about the database will go here.
+Ridgeback Hunter maintains a local database in SQLite format.
+The filename is:
+```
+/var/opt/ridgeback/ridgeback.db
+```
+
+You can access the database using the ```sqlite3``` command.
+
+|===
+| *Table* | *Description*
+| failures | Record of any serious system or upgrade failures.
+| history | For internal use. Database versions and install dates.
+| log | Security information. This table contains data for reports and integration with other systems.
+|===
+
+To access the database, use the command:
+```
+sqlite3 /var/opt/ridgeback.db
+```
+
+Once connected to the database, use the SQLite command to inspect the table structure:
+```
+PRAGMA table_info(log);
+```
 
 == Queries
+
+The following is a list of queries you may want to use for integrating Ridgeback Hunter with other systems.
 
 |===
 | *File* | *Description*

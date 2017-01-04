@@ -1,5 +1,13 @@
 = TODO
 
+== Priorities
+
+. Threats over the last 24 hours
+. Resolved threats over the last 24 hours
+. New MAC addresses added, by hour, last 24 hours
+. New IP addresses added, by hour, last 24 hours
+. Hosts contacting decoys over the last 24 hours
+
 == Ideas
 
 Some suggestions for SQL queries:
