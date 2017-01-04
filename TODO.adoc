@@ -1,0 +1,16 @@
+= TODO
+
+== Ideas
+
+Some suggestions for SQL queries:
+
+- Threats over the last 24 hours
+- Threats over the last 30 days
+- Resolved threats over the last 24 hours
+- Resolved threats over the last 30 days
+- New MAC addresses added, by hour, last 24 hours
+- New MAC addresses added, by day, last 30 days
+- New IP addresses added, by hour, last 24 hours
+- New IP addresses added, by day, last 30 days
+- Hosts contacting decoys over the last 24 hours
+- Hosts contacting decoys over the last 30 days

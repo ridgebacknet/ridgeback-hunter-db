@@ -1,4 +1,4 @@
-# README (Database Integration)
+= README (Database Integration)
 Thomas Phillips <tom@ridgebacknet.com>
 :toc:
 :toclevels: 2
@@ -8,11 +8,11 @@ This repository contains training materials for integrating the Ridgeback Hunter
 The materials are provided for free by Ridgeback Network Defense, Inc.
 If you need assistance with the training materials or want help incorporating them into a course of your own, contact us at support@ridgebacknet.com.
 
-## Ridgeback Hunter Database
+== Ridgeback Hunter Database
 
 Information about the database will go here.
 
-## About Ridgeback Hunter
+== About Ridgeback Hunter
 
 Ridgeback Hunter is an interactive defense platform for network security and network management.
 Ridgeback Hunter is extensible with commercial, custom, or open source plugins and widgets.
