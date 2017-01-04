@@ -19,7 +19,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 == Sample Usage
-sqlite3 /var/opt/ridgeback/ridgeback.db < threat-day-hour-protocol.sql
+sqlite3 /var/opt/ridgeback/ridgeback.db < threat-resolved-hour-protocol.sql
 
 == Output Format
 YYYY-MM-DD|HH|PROTO|COUNT

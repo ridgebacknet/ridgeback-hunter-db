@@ -43,6 +43,7 @@ The following is a list of queries you may want to use for integrating Ridgeback
 | *File* | *Description*
 | link:src/threat-hour-protocol.sql[threat-hour-protocol.sql] | Select and count all threats over the last 24 hours, grouped by hour, protocol.
 | link:src/threat-resolved-hour-protocol.sql[threat-resolved-hour-protocol.sql] | Select and count all threats resolved over the last 24 hours, grouped by hour, protocol.
+| link:src/mac_ip_joined.sql[mac_ip_joined.sql] | All MAC addresses and IP addresses that joined the network in the last 24 hours.
 | link:src/threat-day-hour-protocol.sql[threat-day-hour-protocol.sql] | Select and count all threats, grouped by day, hour, protocol.
 |===
 

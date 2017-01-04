@@ -4,8 +4,7 @@
 
 . link:src/threat-hour-protocol.sql[Threats over the last 24 hours]
 . link:src/threat-resolved-hour-protocol.sql[Resolved threats over the last 24 hours]
-. New MAC addresses added, by hour, last 24 hours
-. New IP addresses added, by hour, last 24 hours
+. link:src/mac_ip_joined.sql[New MAC and IP addresses added, by hour, last 24 hours]
 . Hosts contacting decoys over the last 24 hours
 
 == Ideas
