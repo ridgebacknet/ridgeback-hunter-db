@@ -1,6 +1,6 @@
 /*
 = threat-day-hour-protocol.sql
-Select and count all threats, grouped by day, hour, protocol.
+Select and count all threats within the last 90 days, grouped by day, hour, protocol.
 
 == Copyright
 Copyright (c)2017 Ridgeback Network Defense, Inc.
@@ -39,15 +39,20 @@ COUNT:: how many threats seen
 */
 
 SELECT
-    strftime('%Y-%m-%d', datetime(time/1000, 'unixepoch', 'localtime')) as day,
-    strftime('%H', datetime(time/1000, 'unixepoch', 'localtime')) as hour,
-    proto,
+    strftime('%Y-%m-%d', datetime("time"/1000, 'unixepoch', 'utc'))
+        AS "day",
+    strftime('%H:00-%H:59 UTC', datetime("time"/1000, 'unixepoch', 'utc'))
+        AS "hour",
+    "proto",
     count(*)
-FROM log
+FROM "log"
 WHERE
-    threat is not null
+    ("threat" IS NOT NULL) AND
+    (("time" / 1000) >= (strftime('%s','now') - (90 * 86400)))
 GROUP BY
-    day,
-    hour,
-    proto
+    "day",
+    "hour",
+    "proto"
+ORDER BY
+    "time"
 ;

@@ -38,22 +38,22 @@ COUNT:: times decoys contacted
 */
 
 SELECT
-    src_ip,
-    src_mac,
-    proto,
+    "src_ip",
+    "src_mac",
+    "proto",
     count(*)
 FROM
-    log
+    "log"
 WHERE
     (
-        (dst_sim = 1) OR
-        (threat is not null)
+        ("dst_sim" == 1) OR
+        ("threat" is not null)
     ) AND
-    ((time / 1000) >= (strftime('%s','now') - 86400.0))
+    (("time" / 1000) >= (strftime('%s','now') - (1 * 86400.0)))
 GROUP BY
-    src_ip,
-    src_mac,
-    proto
+    "src_ip",
+    "src_mac",
+    "proto"
 ORDER BY
-    src_ip
+    "src_ip"
 ;

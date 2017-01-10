@@ -41,18 +41,30 @@ T:: UTC timestamp in Unix epoch milliseconds
 2017-01-03 23:38:20|010.000.000.075|b8:2a:72:00:00:4b|1483504700255
 2017-01-03 23:38:20|010.000.000.219|b8:2a:72:00:00:db|1483504700859
 2017-01-03 23:38:21|010.000.000.076|b8:2a:72:00:00:4c|1483504701060
+
+FIXME: Need to double check this SQL statement. Looking for 1st occurance.
+
 */
 
 SELECT
-    strftime('%Y-%m-%d %H:%M:%S', datetime(time/1000, 'unixepoch', 'localtime')),
-    src_ip,
-    src_mac,
-    MIN(time) AS t
-FROM log
+    "src_sim",
+    strftime('%Y-%m-%d %H:%M:%S UTC',
+        datetime("time"/1000, 'unixepoch', 'utc')),
+    "src_ip",
+    "src_mac",
+    MIN("time")
+        AS "t"
+FROM "log"
+WHERE "id" IN
+(
+    SELECT
+        "id"
+    FROM "log"
+    WHERE
+        ("src_sim" IS NULL) AND
+        (("time"/1000) >= (strftime('%s','now') - (1 * 86400)))
+)
 GROUP BY
-    src_mac
-HAVING
-    ((t/1000) >= (strftime('%s','now') - 86400))
-ORDER BY
-    time
+    "src_ip",
+    "src_mac"
 ;

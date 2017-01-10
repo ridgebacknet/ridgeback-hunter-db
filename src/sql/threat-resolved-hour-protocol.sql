@@ -39,15 +39,17 @@ COUNT:: how many threats seen
 */
 
 SELECT
-    strftime('%Y-%m-%d', datetime(time/1000, 'unixepoch', 'localtime')) as day,
-    strftime('%H', datetime(time/1000, 'unixepoch', 'localtime')) as hour,
-    proto,
+    strftime('%Y-%m-%d', datetime("time"/1000, 'unixepoch', 'utc'))
+        AS "day",
+    strftime('%H', datetime(time/1000, 'unixepoch', 'localtime'))
+        AS "hour",
+    "proto",
     count(*)
-FROM log
+FROM "log"
 WHERE
-    (threat is not null) AND
-    ((time / 1000) >= (strftime('%s','now') - 86400.0))
+    (threat IS NOT NULL) AND
+    (("time" / 1000) >= (strftime('%s','now') - 86400.0))
 GROUP BY
-    hour,
-    proto
+    "hour",
+    "proto"
 ;
