@@ -2,22 +2,23 @@
 
 == Priorities
 
-. link:src/sql/threat-hour-protocol.sql[Threats over the last 24 hours]
-. link:src/sql/threat-resolved-hour-protocol.sql[Resolved threats over the last 24 hours]
-. link:src/sql/mac_ip_joined.sql[New MAC and IP addresses added, by hour, last 24 hours]
-. link:src/sql/hosts-contacting-decoys.sql[Hosts contacting decoys over the last 24 hours]
+Alert Related
+
+* Any deployment of decoys or detection of malicious traffic on a specific IP address or MAC address
+* TCP traffic on a specific port like 1234 on a specific subnet (e.g.: a.b.c.0/24)
+* General “decoy deployed" alert
 
 == Ideas
 
 Some suggestions for SQL queries:
 
-- Threats over the last 24 hours
-- Threats over the last 30 days
-- Resolved threats over the last 24 hours
-- Resolved threats over the last 30 days
-- New MAC addresses added, by hour, last 24 hours
-- New MAC addresses added, by day, last 30 days
-- New IP addresses added, by hour, last 24 hours
-- New IP addresses added, by day, last 30 days
-- Hosts contacting decoys over the last 24 hours
-- Hosts contacting decoys over the last 30 days
+* Threats over the last 24 hours
+* Threats over the last 30 days
+* Resolved threats over the last 24 hours
+* Resolved threats over the last 30 days
+* New MAC addresses added, by hour, last 24 hours
+* New MAC addresses added, by day, last 30 days
+* New IP addresses added, by hour, last 24 hours
+* New IP addresses added, by day, last 30 days
+* Hosts contacting decoys over the last 24 hours
+* Hosts contacting decoys over the last 30 days
